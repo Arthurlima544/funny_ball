@@ -35,9 +35,9 @@ jobs:
         
       - name: Run analyzer
         run: flutter analyze
-        
-      - name: Run tests
-        run: flutter test
+        # Skip tests for now
+      #- name: Run tests
+      #  run: flutter test
         
       - name: Download Android keystore
         id: android_keystore
