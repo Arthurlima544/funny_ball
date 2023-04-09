@@ -31,9 +31,6 @@ class InitialPage extends StatefulWidget {
 }
 
 class _InitialPageState extends State<InitialPage> {
-  late RiveAnimationController _controller;
-
-  final bool _isPlaying = false;
   final an1 = SimpleAnimation("StartLoading");
   final an2 = SimpleAnimation("Loading");
   final an3 = SimpleAnimation("FinishLoading");
@@ -41,11 +38,6 @@ class _InitialPageState extends State<InitialPage> {
   @override
   void initState() {
     super.initState();
-
-    _controller = OneShotAnimation(
-      'Character',
-      autoplay: true,
-    );
   }
 
   @override
