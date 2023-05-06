@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mv_vamp/app_sizes.dart';
 import 'package:rive/rive.dart';
 
 void main() async {
@@ -34,6 +35,7 @@ class _InitialPageState extends State<InitialPage> {
   final an1 = SimpleAnimation("StartLoading");
   final an2 = SimpleAnimation("Loading");
   final an3 = SimpleAnimation("FinishLoading");
+  AppSizes appSizes = AppSizes();
 
   @override
   void initState() {
@@ -42,19 +44,14 @@ class _InitialPageState extends State<InitialPage> {
 
   @override
   Widget build(BuildContext context) {
+    appSizes.getCurrentSize(context);
     return Scaffold(
-      body: Column(
-        children: [
-          Center(
-            child: SizedBox(
-              height: MediaQuery.of(context).size.height,
-              width: MediaQuery.of(context).size.width,
-              child: const RiveAnimation.asset(
-                'assets/3897-8156-ball-loader.riv',
-                animations: ["Loading", "StartLoading"],
-                fit: BoxFit.cover,
-              ),
-            ),
+      body: Stack(
+        children: const [
+          RiveAnimation.asset(
+            'assets/3897-8156-ball-loader.riv',
+            animations: ["Loading", "StartLoading"],
+            fit: BoxFit.cover,
           ),
         ],
       ),
