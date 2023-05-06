@@ -50,7 +50,7 @@ class _InitialPageState extends State<InitialPage> {
         children: const [
           RiveAnimation.asset(
             'assets/3897-8156-ball-loader.riv',
-            animations: ["Loading", "StartLoading"],
+            animations: ["StartLoading"],
             fit: BoxFit.cover,
           ),
         ],
